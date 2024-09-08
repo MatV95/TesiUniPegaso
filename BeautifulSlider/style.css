@@ -1,0 +1,462 @@
+/* ----- Body Section ----- */
+/* Import new font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Modify the body to use the imported font in all the page
+ and to modify other parameters that have an effect on the whole page*/
+body{
+    /* Remove margin */
+    margin: 0;
+    /* The page background color and color */
+    background-color: black;
+    color: white;
+    /* The new font and font size*/
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+}
+
+/* Modify the links to remove the bottom border using text
+decoration and change their color */
+a{
+    text-decoration: none;
+}
+
+/* ----- Header Section ----- */
+/* Modify the header for responsive size on larger and smaller screen */
+header{
+    /* Size on larger screens*/
+    width: 1140px;
+    /* Size on smaller screens */
+    max-width: 80%;
+    /* Put the header in the middle */
+    margin: auto;
+    height: 50px;
+    /* Move the menu to the middle of the row*/
+    display: flex;
+    align-items: center;
+    /* Make the header overlap the carousel class */
+    position: relative;
+    z-index: 100;
+}
+
+/* Modify the items in the menu and create spacing between them */
+header a{
+    color: white;
+    margin-right: 40px;
+}
+
+/* ----- Carousel Section ----- */
+/* Carousel general properties */
+.carousel{
+    /* Make it equal to the size of the screen */
+    width: 100vw;
+    height: 100vh;
+    /* Remove content outside the frame */
+    overflow: hidden;
+    /* Move it up to 'occupy' the header section */
+    margin-top: -50px;
+    position: relative;
+}
+
+/* Carousel items general properties */
+.carousel .list .item{
+    /* Set width and height to max */
+    width: 100%;
+    height: 100%;
+    /* Make the items overlap each other */
+    position: absolute; /* By default it will be positioned according to the body */
+    /* Align the position according to the Carousel class */
+    inset: 0 0 0 0;
+}
+
+/* Carousel Images */
+.carousel .list .item img{
+    /* The images inside will be the same size as the items themselves */
+    width: 100%;
+    height: 100%;
+    /* Avoid distortion */
+    object-fit: cover;
+}
+
+/* Carousel Content */
+.carousel .list .item .content{
+    /* Move the position of the content */
+    position: absolute;
+    top: 20%;
+    /* Set width on large screens */
+    width: 1140px;
+    /* Set width to 80% for smaller screens */
+    max-width: 80%;
+    /* Center the element */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Shrink the element without changing the size of the width */
+    padding-right: 30%;
+    box-sizing: border-box;
+    /* Make the content stand out more */
+    color: white;
+    text-shadow: 0 20px 25px black;
+}
+
+/* Modify each item inside the content*/
+/* Modify title and topic common properties */
+.carousel .list .item .content .title,
+.carousel .list .item .content .topic{
+    /* Make it bold */
+    font-weight: bold;
+    /* Modify size*/
+    font-size: 5em;
+    /* Modify spacing*/
+    line-height: 1.3em;
+}
+
+/* Change the topic class to make it stand out more */
+.carousel .list .item .content .topic{
+    color: orange;
+}
+
+/* Modify the description */
+.carousel .list .item .content .description{
+    font-size: 1.3em;
+}
+
+/* ----- Thumbnail Section ----- */
+/* Thumbnail general properties */
+.thumbnail{
+    /* Move it at the bottom right of the carousel */
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    /* Scale it according to the content inside */
+    width: max-content;
+    /* Overlapping the carousel */
+    z-index: 100;
+    /* Make the items inside be in the same row */
+    display: flex;
+    /* Distance between elements */
+    gap: 20px;
+}
+
+/* Modify the items inside Thumbnail */
+.thumbnail .item{
+    /* Set size */
+    width: 150px;
+    height: 220px;
+    /* Don't make it shrink on small screens */
+    flex-shrink: 0;
+    /* Set position so that the content inside can rely on it to move position */
+    position: relative;
+}
+
+/* Modify the image inside the item */
+.thumbnail .item img{
+    /* Set the image size to the size of the item */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Adjust the content position */
+.thumbnail .item .content{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+/* Set title font weight */
+.thumbnail .item .content .title{
+    font-weight: 500;
+}
+
+/* Set description font weight */
+.thumbnail .item .content .description{
+    font-weight: 300;
+}
+
+/* ----- Arrows Section ----- */
+/* Arrows general properties */
+.arrows{
+    /* Modify position and dimensions */
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    width: 300px;
+    max-width: 30%;
+    /* Position them in the same row and set the distance between them */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Arrow buttons properties */
+.arrows button{
+    /* Set dimensions */
+    width: 40px;
+    height: 40px;
+    /* Make them circular */
+    border-radius: 50%;
+    /* Color, border and font */
+    background-color: gray;
+    color: white;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: large;
+    /* Add hover transition to the buttons */
+    transition: .5s;
+    /* Make z-index higher than the first item to be displayed */
+    z-index: 100;
+}
+
+/* Define hover properties */
+.arrows button:hover{
+    /* Invert the buttons color on hover */
+    background-color: white;
+    color: gray;
+}
+
+/* ----- Carousel Behaviour Section ----- */
+/* In this design, the item that is in the first position, will always be
+ the item that is in active state. To make the first item always appear,
+ we need to change its z-index so that it overlaps all other items */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* Create an animation effect to make the content of the first item
+appear in a more beautiful way */
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .description{
+    /* Initial down shift of 50px while hidden by blur and opacity */
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    /* Now run the animation that basically inverts this changes */
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+/* Delay the time taken for the animation effect of each item
+after the first for a fancier effect */
+.carousel .list .item:nth-child(1) .content .title{
+    animation-delay: 1.2s !important;
+}
+
+.carousel .list .item:nth-child(1) .content .topic{
+    animation-delay: 1.4s !important;
+}
+
+.carousel .list .item:nth-child(1) .content .description{
+    animation-delay: 1.6s !important;
+}
+
+/* Carousel behaviour on clicking next */
+/* When the next button is pressed, we return at the image located at
+the first item, resize it to a thumbnail image, and move it to the
+position of the first thumbnail image, so that these to images overlaps
+each other and then run the animation */
+.carousel.next .list .item:nth-child(1) img{
+    /* Resizing and moving */
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 30px;
+    /* Running the animation */
+    animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage {
+    to{
+        /* Change image size and position back to the original,
+        this make it seems like the thumbnail image has been enlarged */
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+/* Animations effect for the item in the last position of the Thumbnails */
+/* 'Disappear - Reappear' Animation */
+.carousel.next .thumbnail .item:nth-last-child(1){
+    /* Make it 'disappear' */
+    width: 0;
+    overflow: hidden;
+    /* Then start the animation */
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+@keyframes showThumbnail {
+    to{
+        /* Change its width back to the original */
+        width: 150px;
+    }
+}
+
+/* 'Getting in position' Animation */
+.carousel.next .thumbnail{
+    /* Make it 'shrink' */
+    transform: translateX(150px);
+    /* Re-enlarge with an animation */
+    animation: transformThumbnail 0.5s linear 1 forwards;
+}
+@keyframes transformThumbnail {
+    to{
+        /* Return it to its original state */
+        transform: translateX(0);
+    }
+}
+
+/* Carousel behaviour on clicking prev */
+/* The first item is always the active item, so that means that the
+ second item is the item that has just been 'deleted' from the active
+ state. So, when the prev/back button is pressed, we point to the image
+ of the second item to create the disappearing effect */
+.carousel.prev .list .item:nth-child(2){
+    /* In order to initially be able to see the second item, the z-index
+     of the second item is set higher than the first item */
+    z-index: 2;
+}
+
+/* The image in the second item will initially have the same size and
+ position as a normal active item */
+.carousel.prev .list .item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* Then we run an 'out' image animation */
+    animation: outImage 0.5s linear 1 forwards;
+}
+@keyframes outImage {
+    to{
+        /* Scale the image down to the size of the thumbnail image */
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        /* Move it to the position of the first thumbnail item */
+        left: 50%;
+        bottom: 50px;
+    }
+}
+
+/* Inverse (to next) animations effect for the item in the last position of the Thumbnails */
+.carousel.prev .thumbnail .item:nth-child(1){
+    /* Hide it */
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    /* Show it with animation */
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+/* At this point the content of the second item is overriding the content of the
+ currently active item. Create an animation to hide it. */
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .description{
+    /* Run an animation to hide the content */
+    animation: contentOut 1.5s linear 1 forwards;
+}
+@keyframes contentOut {
+    to{
+        /* Move it down, blur it and hide it*/
+        transform: translateX(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+/* When the next or prev button is pressed during the slide process, the animation
+is performed. The button cannot be pressed until the animations runs in parallel */
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+
+/* ----- Time Class Section ----- */
+/* The time class is used to check the running time of an animation */
+.carousel .time{
+    /* Shift its position and give the background color to make it stand out */
+    width: 0;
+    height: 5px;
+    background-color: orange;
+    position: absolute;
+    /* Let it be on top */
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+/* The initial width of the time class is 0, but when the next or prev button
+   is pressed, the width will change to 100%, so that it can be seen */
+.carousel.next .time,
+.carousel.prev .time{
+    width: 100%;
+    /* Create an animation that gradually decreases the width until it reaches
+    0 to signal that the slider animation is complete */
+    animation: timeRunning 2s linear 1 forwards;
+}
+@keyframes timeRunning {
+    to{
+        width: 0;
+    }
+}
+
+/* Make the page responsive for mobile */
+@media screen and (max-width: 678px){
+    /* Remove the content padding */
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+
+    /* Shrink the title text to fit the mobile screen */
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+}
+
+/* ----- Download Section ----- */
+.download-section {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 10%;
+    background-color: #222;
+    color: white;
+}
+
+.download-section h2 {
+    color: orange;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.download-section p {
+    text-align: left;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.download-button button {
+    margin-top: 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.download-button button:hover {
+    background-color: darkorange;
+}

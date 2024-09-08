@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags section -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Slider</title>
+
+    <!-- Links section -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <!-- Simple navbar -->
+        <nav>
+            <a href="">Home</a>
+            <a href="">Contacts</a>
+            <a href="">Info</a>
+        </nav>
+    </header>
+
+    <!-- The carousel that will contain the entire content of the slider -->
+    <div class="carousel">
+        <!-- Slider list of items -->
+        <div class="list">
+            <!-- Each item will include 1 image, 1 piece of content with
+             author name, project name, topic, description and buttons -->
+
+            <!-- Slider item 1 -->
+            <div class="item">
+                <!-- Slider image -->
+                <img src="images/Risk.png" alt="Risk">
+                <!-- Slider content -->
+                <div class="content">
+                    <div class="title">Il</div>
+                    <div class="topic">Rischio</div>
+                    <div class="description">
+                        Nelle aziende digitali, il rischio assume una dimensione particolarmente complessa a causa della rapida evoluzione delle tecnologie
+                        e della crescente dipendenza dai sistemi informatici. Le Aziende devono affrontare minacce costanti, come attacchi informatici,
+                        violazioni dei dati e interruzioni operative, che possono compromettere sia la sicurezza delle informazioni che la continuità delle operazioni.
+                        Inoltre, le normative in continuo sviluppo e cambiamento, richiedeno una costante attenzione per garantire la conformità alle leggi sulla
+                        protezione dei dati e sulla sicurezza informatica. Per le aziende digitali, una gestione del rischio efficace non è solo una necessità
+                        operativa, ma un elemento chiave per mantenere la fiducia dei clienti e sostenere la competitività nel mercato globale.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider item 2 -->
+            <div class="item">
+                <!-- Slider image -->
+                <img src="images/RiskManagement.jpg" alt="RiskManagement">
+                <!-- Slider content -->
+                <div class="content">
+                    <div class="title">La Gestione del Rischio o</div>
+                    <div class="topic">Risk Management</div>
+                    <div class="description">
+                        Il risk management nelle aziende digitali è fondamentale per affrontare le sfide legate alla sicurezza informatica e alla protezione
+                        dei dati. In un contesto dove le tecnologie evolvono rapidamente e le minacce sono in costante aumento, una gestione efficace del
+                        rischio permette di mitigare i potenziali impatti negativi, garantendo la continuità operativa e la conformità alle normative.
+                        Per le aziende digitali, il risk management non è solo una misura preventiva, ma una strategia chiave per sostenere la crescita e
+                        mantenere la fiducia dei clienti.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider item 3 -->
+            <div class="item">
+                <!-- Slider image -->
+                <img src="images/RiskManager.png" alt="RiskManager">
+                <!-- Slider content -->
+                <div class="content">
+                    <div class="title">Il Gestore del Rischio o</div>
+                    <div class="topic">Risk Manager</div>
+                    <div class="description">
+                        Il risk manager nelle aziende digitali svolge un ruolo cruciale nel proteggere l'organizzazione dalle crescenti minacce informatiche
+                        e garantire la sicurezza dei dati. Questo professionista identifica, valuta e mitiga i rischi associati alle tecnologie digitali,
+                        assicurando la continuità operativa e la conformità normativa. In un ambiente in continua evoluzione, il risk manager è essenziale
+                        per salvaguardare la reputazione aziendale e mantenere la fiducia dei clienti.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thumbnails items -->
+        <div class="thumbnail">
+            <!-- Each item will have images and content corresponding to
+             each item in the class list. The thumbnail of the first item
+             is deliberately positioned last, because since the first item
+             is selected by default, its thumbnail should be at the end of
+             the list. Doing it like this, eliminates the need for additional
+             operations on 'startup' -->
+
+            <!-- Thumbnail item 2 -->
+            <div class="item">
+                <img src="images/RiskManagement.jpg" alt="RiskManagementThumbnail">
+                <div class="content">
+                    <div class="title">La Gestione del Rischio o</div>
+                    <div class="description">Risk Management</div>
+                </div>
+            </div>
+
+            <!-- Thumbnail item 3 -->
+            <div class="item">
+                <img src="images/RiskManager.png" alt="RiskManagerThumbnail">
+                <div class="content">
+                    <div class="title">Il Gestore del Rischio o</div>
+                    <div class="description">Risk Manager</div>
+                </div>
+            </div>
+
+            <!-- Thumbnail item 1 -->
+            <div class="item">
+                <img src="images/Risk.png" alt="RiskThumbnail">
+                <div class="content">
+                    <div class="title">Il</div>
+                    <div class="description">Rischio</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow Buttons -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+
+        <!-- Time class, used to check the running time of an animation -->
+        <div class="time"></div>
+    </div>
+
+    <!-- Download Section -->
+    <section class="download-section">
+        <h2>Informazioni sul Rischio nelle Aziende Digitali</h2>
+        <p>Le aziende digitali operano in un ambiente dinamico e altamente competitivo, dove la rapidità dei cambiamenti tecnologici e l'aumento delle
+            operazioni digitali espongono le organizzazioni a una vasta gamma di rischi. Questi rischi possono derivare da minacce esterne, come attacchi
+            informatici, malware, phishing e violazioni dei dati, che non solo compromettono la sicurezza delle informazioni sensibili ma possono anche
+            causare danni finanziari e reputazionali significativi. Inoltre, le aziende digitali devono affrontare rischi interni legati alla gestione
+            dell'innovazione tecnologica, all'integrazione di nuovi sistemi e alla formazione del personale, oltre a dover garantire la conformità a
+            normative sempre più stringenti sulla protezione dei dati, come il GDPR.
+        </p>
+        <p>Il rischio non si limita solo agli aspetti tecnologici; include anche la gestione delle operazioni quotidiane, dove eventuali interruzioni dei
+            servizi possono influire negativamente sulla continuità aziendale e sulla fiducia dei clienti. In questo contesto, la capacità di un'azienda di
+            identificare precocemente i rischi, valutare la loro potenziale gravità e sviluppare strategie efficaci per mitigarli diventa un fattore
+            determinante per il successo a lungo termine. La gestione del rischio nelle aziende digitali non è quindi un semplice esercizio di conformità,
+            ma una componente strategica che contribuisce a costruire un business resiliente e preparato ad affrontare le sfide future.
+        </p>
+        <p>
+            Per le aziende che operano nel mondo digitale, la protezione delle risorse informative e la continuità operativa sono priorità assolute.
+            Investire nella gestione del rischio significa proteggere non solo l'integrità dei sistemi e dei dati, ma anche la reputazione e la fiducia
+            costruita con i clienti e i partner commerciali. In un'era dove la sicurezza informatica è strettamente legata alla sostenibilità aziendale,
+            comprendere e gestire i rischi digitali è fondamentale per prosperare in un mercato sempre più complesso e interconnesso. Per saperne di più su
+            come gestire efficacemente i rischi nelle aziende digitali e garantire la sicurezza delle operazioni, ti invitiamo a scaricare il PDF.
+        </p>
+        <div class="download-button">
+            <button onclick="window.location.href='documents/TesiRiskManagement.pdf'">Download PDF</button>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
